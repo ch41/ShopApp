@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F3F5F9">
+
+        <TextView
+            android:id="@+id/title_country_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Москва"
+            android:textFontWeight="500"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:src="@drawable/bottom_arrow_ic"
+            app:layout_constraintBottom_toBottomOf="@+id/title_country_text_view"
+            app:layout_constraintStart_toEndOf="@+id/title_country_text_view"
+            app:layout_constraintTop_toTopOf="@+id/title_country_text_view" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/qr_code_ic"
+            app:layout_constraintBottom_toBottomOf="@+id/title_country_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/title_country_text_view" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/images_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/title_country_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/title_country_text_view"
+            tools:listitem="@layout/top_recycler_item" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tags_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@+id/images_recycler_view"
+            app:layout_constraintStart_toStartOf="@+id/images_recycler_view"
+            app:layout_constraintTop_toBottomOf="@+id/images_recycler_view"
+            tools:listitem="@layout/tag_recycler_item" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/product_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@+id/tags_recycler_view"
+            app:layout_constraintStart_toStartOf="@+id/tags_recycler_view"
+            app:layout_constraintTop_toBottomOf="@+id/tags_recycler_view"
+            tools:listitem="@layout/product_recycler_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
